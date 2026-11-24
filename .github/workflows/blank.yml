@@ -1,36 +1,15 @@
-# This is a basic workflow to help you get started with Actions
-
-name: CI
-
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+- name: Sonatype GitHub Actions
+  # You may pin to the exact commit or the version.
+  # uses: sonatype/actions@8c4abefc47a5f0f8dd124f0bb60e48aafec7b2de
+  uses: sonatype/actions@v1.16.0
+  with:
+    # Lifecycle (IQ Server) URL (e.g. http://localhost:8070).
+    iq-server-url: 
+    # The username to authenticate with Lifecycle (IQ Server).
+    username: 
+    # The password to authenticate with Lifecycle (IQ Server).
+    password: 
+    # Lifecycle (IQ Server) application ID. When Automatic Applications is enabled and the application ID has not yet been used, a new application will be created with the given ID.
+    application-id: 
+    # Space-separated list of paths to specific files, directories, or docker images. Apache Ant-styled patterns are allowed.
+    scan-targets: 
